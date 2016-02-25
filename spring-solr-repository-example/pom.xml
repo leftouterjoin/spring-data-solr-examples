@@ -10,10 +10,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <junit.version>4.10</junit.version>
-    <slf4j.version>1.6.4</slf4j.version>
-    <spring.data-commons.version>1.4.0.RELEASE</spring.data-commons.version>
-    <spring.data-solr.version>1.0.0.BUILD-SNAPSHOT</spring.data-solr.version>
+    <junit.version>4.11</junit.version>
+    <slf4j.version>1.7.11</slf4j.version>
+    <spring.data-commons.version>1.8.5.RELEASE</spring.data-commons.version>
+    <spring.data-solr.version>1.5.4.RELEASE</spring.data-solr.version>
   </properties>
 
   <licenses>
@@ -47,7 +47,7 @@
       <artifactId>spring-data-solr</artifactId>
       <version>${spring.data-solr.version}</version>
     </dependency>
-   
+
     <!-- LOGGING -->
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -78,6 +78,17 @@
       <version>3.1.1.RELEASE</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>org.projectlombok</groupId>
+    	<artifactId>lombok</artifactId>
+    	<version>1.16.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tika</groupId>
+      <artifactId>tika-parsers</artifactId>
+    <version>1.11</version>
+</dependency>
+
   </dependencies>
 
   <build>
@@ -135,7 +146,7 @@
       <timezone>-5</timezone>
     </developer>
   </developers>
-  
+
   <repositories>
     <repository>
       <id>spring-snapshots</id>

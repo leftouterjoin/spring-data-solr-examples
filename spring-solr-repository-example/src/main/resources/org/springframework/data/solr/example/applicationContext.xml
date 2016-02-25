@@ -8,14 +8,14 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
- <!-- 
+ <!--
   #####################################
   CONTEXT SETTINGS
   #####################################
    -->
   <context:property-placeholder location="classpath:org/springframework/data/solr/example/configuration.properties" ignore-resource-not-found="true" />
 
- <!-- 
+ <!--
   #####################################
   SOLR
   #####################################
@@ -27,6 +27,9 @@
   </bean>
 
   <bean id="searchRepository" class="org.springframework.data.solr.example.repository.SolrProductRepository">
+    <property name="solrOperations" ref="solrTemplate" />
+  </bean>
+  <bean id="pdfLibrarySolrRepository" class="org.springframework.data.solr.example.repository.PdfLibrarySolrRepository">
     <property name="solrOperations" ref="solrTemplate" />
   </bean>
 
