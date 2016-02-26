@@ -19,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.solr.core.query.result.FacetPage;
 import org.springframework.data.solr.example.model.Product;
+import org.springframework.data.solr.repository.Query;
 
 /**
  * @author Christoph Strobl
@@ -27,6 +28,7 @@ public interface ProductRepository extends CrudRepository<Product, String> {
 
 	Page<Product> findByPopularity(Integer popularity);
 
+	@Query
 	FacetPage<Product> findByNameStartingWithAndFacetOnAvailable(String namePrefix);
 
 	Page<Product> findByAvailableTrue();
